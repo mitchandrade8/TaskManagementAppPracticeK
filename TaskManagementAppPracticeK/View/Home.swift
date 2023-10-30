@@ -15,6 +15,9 @@ struct Home: View {
     /// Week Slidder
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 0
+
+    /// Animation Name
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
@@ -86,6 +89,37 @@ struct Home: View {
                         .fontWeight(.medium)
                         .textScale(.secondary)
                         .foregroundStyle(.gray)
+                    
+                    Text(day.date.format("dd"))
+                        .font(.callout)
+                        .fontWeight(.bold)
+                        .textScale(.secondary)
+                        .foregroundStyle(isSameDate(day.date, currentDate) ? .white : .gray)
+                        .frame(width: 35, height: 35)
+                        .background(content: {
+                            if isSameDate(day.date, currentDate) {
+                                Circle()
+                                    .fill(.darkBlue)
+                            }
+                            
+                            /// Indicator to Show, Which is Todays Date
+                            if day.date.isToday {
+                                Circle()
+                                    .fill(.cyan)
+                                    .frame(width: 5, height: 5)
+                                    .vSpacing(.bottom)
+                                    .offset(y: 12)
+                            }
+                        })
+                        .background(.white.shadow(.drop(radius: 1)), in: .circle)
+                }
+                .hSpacing(.center)
+                .contentShape(.rect)
+                .onTapGesture {
+                    /// Updating Current Date
+                    withAnimation(.snappy) {
+                        currentDate = day.date
+                    }
                 }
             }
         }

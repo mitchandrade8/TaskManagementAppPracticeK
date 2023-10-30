@@ -9,6 +9,8 @@ import SwiftUI
 
 /// Date Extensions Needed for building UI
 extension Date {
+    
+    
     /// Custom Date Format
     func format(_ format: String) -> String {
         let formatter = DateFormatter()
@@ -16,6 +18,13 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    
+    /// Checking Whether the Date is Today
+    var isToday: Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+    
     
     /// Fetching Week Based on given Date
     func fetchWeek(_ date: Date = .init()) -> [WeekDay] {
@@ -37,6 +46,7 @@ extension Date {
         
         return week
     }
+    
     
     struct WeekDay: Identifiable {
         var id: UUID = .init()
