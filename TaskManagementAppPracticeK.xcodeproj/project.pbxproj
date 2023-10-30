@@ -15,6 +15,7 @@
 		74A673C72AEF63C900189F21 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673C62AEF63C900189F21 /* View+Extensions.swift */; };
 		74A673C92AEF63E300189F21 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673C82AEF63E300189F21 /* Date+Extensions.swift */; };
 		74A673CE2AF01BA100189F21 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673CD2AF01BA100189F21 /* Home.swift */; };
+		74A673D02AF0627C00189F21 /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673CF2AF0627C00189F21 /* OffsetKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		74A673C62AEF63C900189F21 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		74A673C82AEF63E300189F21 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		74A673CD2AF01BA100189F21 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		74A673CF2AF0627C00189F21 /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				74A673C62AEF63C900189F21 /* View+Extensions.swift */,
 				74A673C82AEF63E300189F21 /* Date+Extensions.swift */,
+				74A673CF2AF0627C00189F21 /* OffsetKey.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				74A673B72AEF5A4E00189F21 /* ContentView.swift in Sources */,
 				74A673C42AEF60C400189F21 /* Task.swift in Sources */,
 				74A673C72AEF63C900189F21 /* View+Extensions.swift in Sources */,
+				74A673D02AF0627C00189F21 /* OffsetKey.swift in Sources */,
 				74A673C92AEF63E300189F21 /* Date+Extensions.swift in Sources */,
 				74A673CE2AF01BA100189F21 /* Home.swift in Sources */,
 				74A673B52AEF5A4E00189F21 /* TaskManagementAppPracticeKApp.swift in Sources */,

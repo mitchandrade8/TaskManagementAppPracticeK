@@ -14,8 +14,10 @@ struct Home: View {
     
     /// Week Slidder
     @State private var weekSlider: [[Date.WeekDay]] = []
-    @State private var currentWeekIndex: Int = 0
+    @State private var currentWeekIndex: Int = 1
 
+    @State private var createWeek: Bool = false
+    
     /// Animation Namespace
     @Namespace private var animation
 
@@ -69,6 +71,7 @@ struct Home: View {
                         .tag(index)
                 }
             }
+            .padding(.horizontal, -15)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 90)
             
@@ -85,6 +88,12 @@ struct Home: View {
         })
         .padding(15)
         .background(.white)
+        .onChange(of: currentWeekIndex, initial: false) { oldValue, newValue in
+            /// Creating When it reaches first/last page
+            if newValue == 0 || newValue == (weekSlider.count - 1) {
+                createWeek = true
+            }
+        }
     }
     
     /// Week View
