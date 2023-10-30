@@ -9,5 +9,11 @@ import SwiftUI
 
 /// Date Extensions Needed for building UI
 extension Date {
-    
+    /// Custom Date Format
+    func format(_ format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        
+        return formatter.string(from: self)
+    }
 }
