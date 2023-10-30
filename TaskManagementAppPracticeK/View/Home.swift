@@ -24,6 +24,17 @@ struct Home: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
+            
+            ScrollView(.vertical) {
+                VStack {
+                    /// Tasks View
+                    ///
+                }
+                .hSpacing(.center)
+                .vSpacing(.center)
+            }
+            .scrollIndicators(.hidden)
+           
         })
         .vSpacing(.top)
         .onAppear(perform: {
@@ -140,6 +151,42 @@ struct Home: View {
                         currentDate = day.date
                     }
                 }
+            }
+        }
+        .background {
+            GeometryReader {
+                let minX = $0.frame(in: .global).minX
+                
+                Color.clear
+                    .preference(key: OffsetKey.self, value: minX)
+                    .onPreferenceChange(OffsetKey.self) { value in
+                        /// When the Offset reaches 15 and if the createWeek is toggled then simply generating next set of week
+                        if value.rounded() == 15 && createWeek {
+                            paginateWeek()
+//                            print("Generate")
+                            createWeek = false
+                        }
+                        
+                    }
+            }
+        }
+    }
+    
+    func paginateWeek() {
+        /// SafeCheck
+        if weekSlider.indices.contains(currentWeekIndex) {
+            if let firstDate = weekSlider[currentWeekIndex].first?.date, currentWeekIndex == 0 {
+                /// Inserting New Week at 0th Index and Removing Last Array Item
+                weekSlider.insert(firstDate.createPreviousWeek(), at: 0)
+                weekSlider.removeLast()
+                currentWeekIndex = 1
+            }
+            
+            if let lastDate = weekSlider[currentWeekIndex].last?.date, currentWeekIndex == (weekSlider.count - 1) {
+                /// Appending New Week at Last Index and Removing First Array Item
+                weekSlider.append(lastDate.createNextWeek())
+                weekSlider.removeFirst()
+                currentWeekIndex = weekSlider.count - 2
             }
         }
     }
