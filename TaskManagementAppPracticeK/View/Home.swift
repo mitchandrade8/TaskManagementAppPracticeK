@@ -16,9 +16,9 @@ struct Home: View {
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 0
 
-    /// Animation Name
-    
-    
+    /// Animation Namespace
+    @Namespace private var animation
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
@@ -100,6 +100,7 @@ struct Home: View {
                             if isSameDate(day.date, currentDate) {
                                 Circle()
                                     .fill(.darkBlue)
+                                    .matchedGeometryEffect(id: "TABINDICATOR", in: animation)
                             }
                             
                             /// Indicator to Show, Which is Todays Date
