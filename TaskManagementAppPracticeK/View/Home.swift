@@ -14,8 +14,26 @@ struct Home: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-            /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+            HeaderView()
         })
+    }
+    
+    
+    /// Header View
+    @ViewBuilder
+    func HeaderView() -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 5) {
+                Text(currentDate.format("MMMM"))
+                    .foregroundStyle(.darkBlue)
+                
+                Text(currentDate.format("YYYY"))
+                    .foregroundStyle(.gray)
+            }
+            .font(.title.bold())
+            
+            Text(currentDate.formatted(date: .complete, time: .omitted))
+        }
     }
 }
 
