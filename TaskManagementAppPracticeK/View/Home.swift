@@ -12,11 +12,21 @@ struct Home: View {
     /// Task Manager Properties
     @State private var currentDate: Date = .init()
     
+    /// Week Slidder
+    @State private var weekSlider: [[Date.WeekDay]] = []
+    @State private var currentWeekIndex: Int = 0
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
         })
         .vSpacing(.top)
+        .onAppear(perform: {
+            if weekSlider.isEmpty {
+                let currentWeek = Date().fetchWeek()
+                weekSlider.append(currentWeek)
+            }
+        })
     }
     
     
@@ -38,9 +48,47 @@ struct Home: View {
                 .fontWeight(.semibold)
                 .textScale(.secondary)
                 .foregroundStyle(.gray)
+            
+            /// Week Slider
+            TabView(selection: $currentWeekIndex) {
+                ForEach(weekSlider.indices, id: \.self) { index in
+                    let week = weekSlider[index]
+                    WeekView(week)
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(height: 90)
+            
         }
-        .padding(15)
         .hSpacing(.leading)
+        .overlay(alignment: .topTrailing, content: {
+            Button(action: { }) {
+                Image(.pic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 45, height: 45)
+                    .clipShape(.circle)
+            }
+        })
+        .padding(15)
+        .background(.white)
+    }
+    
+    /// Week View
+    @ViewBuilder
+    func WeekView(_ week: [Date.WeekDay]) -> some View {
+        HStack(spacing: 0) {
+            ForEach(week) { day in
+                VStack(spacing: 8) {
+                    Text(day.date.format("E"))
+                        .font(.callout)
+                        .fontWeight(.medium)
+                        .textScale(.secondary)
+                        .foregroundStyle(.gray)
+                }
+            }
+        }
     }
 }
 
