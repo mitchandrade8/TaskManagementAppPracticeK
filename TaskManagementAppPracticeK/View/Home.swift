@@ -27,7 +27,16 @@ struct Home: View {
         .onAppear(perform: {
             if weekSlider.isEmpty {
                 let currentWeek = Date().fetchWeek()
+                
+                if let firstDate = currentWeek.first?.date {
+                    weekSlider.append(firstDate.createPreviousWeek())
+                }
+                
                 weekSlider.append(currentWeek)
+                
+                if let lastDate = currentWeek.last?.date {
+                    weekSlider.append(lastDate.createNextWeek())
+                }
             }
         })
     }
