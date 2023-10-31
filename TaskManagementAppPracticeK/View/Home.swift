@@ -18,7 +18,7 @@ struct Home: View {
 
     @State private var createWeek: Bool = false
     @State private var tasks: [Task] = sampleTasks.sorted(by: { $1.creationDate > $0.creationDate })
-    
+    @State private var createNewTask: Bool = false
     /// Animation Namespace
     @Namespace private var animation
 
@@ -38,6 +38,16 @@ struct Home: View {
            
         })
         .vSpacing(.top)
+        .overlay(alignment: .bottomTrailing, content: {
+            Button(action: {}, label: {
+                Image(systemName: "plus")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .frame(width: 55, height: 55)
+                    .background(.darkBlue, in: .circle)
+            })
+            .padding(15)
+        })
         .onAppear(perform: {
             if weekSlider.isEmpty {
                 let currentWeek = Date().fetchWeek()
