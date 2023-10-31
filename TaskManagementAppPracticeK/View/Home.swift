@@ -44,7 +44,7 @@ struct Home: View {
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .frame(width: 55, height: 55)
-                    .background(.darkBlue, in: .circle)
+                    .background(.darkBlue.shadow(.drop(color: .black.opacity(0.25), radius: 5, x: 10, y: 10)), in: .circle)
             })
             .padding(15)
         })
