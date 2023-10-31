@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741F1A322AF0B3FA00443CDC /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741F1A312AF0B3FA00443CDC /* TaskRowView.swift */; };
 		74A673B52AEF5A4E00189F21 /* TaskManagementAppPracticeKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673B42AEF5A4E00189F21 /* TaskManagementAppPracticeKApp.swift */; };
 		74A673B72AEF5A4E00189F21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673B62AEF5A4E00189F21 /* ContentView.swift */; };
 		74A673B92AEF5A5000189F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A673B82AEF5A5000189F21 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		741F1A312AF0B3FA00443CDC /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		74A673B12AEF5A4E00189F21 /* TaskManagementAppPracticeK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagementAppPracticeK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A673B42AEF5A4E00189F21 /* TaskManagementAppPracticeKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagementAppPracticeKApp.swift; sourceTree = "<group>"; };
 		74A673B62AEF5A4E00189F21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				74A673CD2AF01BA100189F21 /* Home.swift */,
+				741F1A312AF0B3FA00443CDC /* TaskRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				74A673B72AEF5A4E00189F21 /* ContentView.swift in Sources */,
 				74A673C42AEF60C400189F21 /* Task.swift in Sources */,
+				741F1A322AF0B3FA00443CDC /* TaskRowView.swift in Sources */,
 				74A673C72AEF63C900189F21 /* View+Extensions.swift in Sources */,
 				74A673D02AF0627C00189F21 /* OffsetKey.swift in Sources */,
 				74A673C92AEF63E300189F21 /* Date+Extensions.swift in Sources */,

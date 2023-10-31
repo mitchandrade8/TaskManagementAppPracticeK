@@ -17,6 +17,7 @@ struct Home: View {
     @State private var currentWeekIndex: Int = 1
 
     @State private var createWeek: Bool = false
+    @State private var tasks: [Task] = sampleTasks.sorted(by: { $1.creationDate > $0.creationDate })
     
     /// Animation Namespace
     @Namespace private var animation
@@ -28,7 +29,7 @@ struct Home: View {
             ScrollView(.vertical) {
                 VStack {
                     /// Tasks View
-                    ///
+                    TasksView()
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)
@@ -107,6 +108,7 @@ struct Home: View {
         }
     }
     
+    
     /// Week View
     @ViewBuilder
     func WeekView(_ week: [Date.WeekDay]) -> some View {
@@ -171,6 +173,20 @@ struct Home: View {
             }
         }
     }
+    
+    
+    /// Tasks View
+    @ViewBuilder
+    func TasksView() -> some View {
+        VStack(alignment: .leading, spacing: 35) {
+            ForEach($tasks) { $task in
+                TaskRowView(task: $task)
+            }
+        }
+        .padding([.vertical, .leading], 15)
+        .padding(.top, 15)
+    }
+    
     
     func paginateWeek() {
         /// SafeCheck
