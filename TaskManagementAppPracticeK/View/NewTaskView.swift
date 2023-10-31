@@ -85,6 +85,8 @@ struct NewTaskView: View {
             }
             .padding(.top, 5)
             
+            Spacer(minLength: 0)
+            
             Button(action: {}, label: {
                 Text("Create Task")
                     .font(.title3)
@@ -95,6 +97,8 @@ struct NewTaskView: View {
                     .padding(.vertical, 12)
                     .background(taskColor, in: .rect(cornerRadius: 10))
             })
+            .disabled(taskTitle == "")
+            .opacity(taskTitle == "" ? 0.5 : 1)
             
         })
         .padding(15)
