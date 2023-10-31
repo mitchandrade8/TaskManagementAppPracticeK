@@ -48,7 +48,7 @@ struct NewTaskView: View {
                         .datePickerStyle(.compact)
                         .scaleEffect(0.9, anchor: .leading)
                 })
-                .padding(.top, 5)
+                
                 /// Giving some space for tapping
                 .padding(.trailing, -15)
                 
@@ -80,8 +80,22 @@ struct NewTaskView: View {
                         }
                     }
                 })
-                .padding(.top, 5)
+                
+                
             }
+            .padding(.top, 5)
+            
+            Button(action: {}, label: {
+                Text("Create Task")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .textScale(.secondary)
+                    .foregroundStyle(.black)
+                    .hSpacing(.center)
+                    .padding(.vertical, 12)
+                    .background(taskColor, in: .rect(cornerRadius: 10))
+            })
+            
         })
         .padding(15)
     }
