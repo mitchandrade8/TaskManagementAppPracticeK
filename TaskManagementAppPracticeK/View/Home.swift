@@ -39,7 +39,9 @@ struct Home: View {
         })
         .vSpacing(.top)
         .overlay(alignment: .bottomTrailing, content: {
-            Button(action: {}, label: {
+            Button(action: {
+                createNewTask.toggle()
+            }, label: {
                 Image(systemName: "plus")
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
@@ -62,6 +64,14 @@ struct Home: View {
                     weekSlider.append(lastDate.createNextWeek())
                 }
             }
+        })
+        .sheet(isPresented: $createNewTask, content: {
+            NewTaskView()
+                .presentationDetents([.height(300)])
+                .interactiveDismissDisabled()
+                .presentationCornerRadius(30)
+                .presentationBackground(.BG)
+            
         })
     }
     

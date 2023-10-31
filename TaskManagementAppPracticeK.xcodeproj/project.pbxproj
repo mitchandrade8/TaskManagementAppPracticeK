@@ -17,6 +17,7 @@
 		74A673C92AEF63E300189F21 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673C82AEF63E300189F21 /* Date+Extensions.swift */; };
 		74A673CE2AF01BA100189F21 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673CD2AF01BA100189F21 /* Home.swift */; };
 		74A673D02AF0627C00189F21 /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A673CF2AF0627C00189F21 /* OffsetKey.swift */; };
+		74C950242AF1B52100CA96DA /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C950232AF1B52100CA96DA /* NewTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		74A673C82AEF63E300189F21 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		74A673CD2AF01BA100189F21 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		74A673CF2AF0627C00189F21 /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
+		74C950232AF1B52100CA96DA /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				74A673CD2AF01BA100189F21 /* Home.swift */,
 				741F1A312AF0B3FA00443CDC /* TaskRowView.swift */,
+				74C950232AF1B52100CA96DA /* NewTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				74A673B72AEF5A4E00189F21 /* ContentView.swift in Sources */,
 				74A673C42AEF60C400189F21 /* Task.swift in Sources */,
+				74C950242AF1B52100CA96DA /* NewTaskView.swift in Sources */,
 				741F1A322AF0B3FA00443CDC /* TaskRowView.swift in Sources */,
 				74A673C72AEF63C900189F21 /* View+Extensions.swift in Sources */,
 				74A673D02AF0627C00189F21 /* OffsetKey.swift in Sources */,

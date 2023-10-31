@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct NewTaskView: View {
+    
+    /// View Properties
+    
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,4 +19,5 @@ struct NewTaskView: View {
 
 #Preview {
     NewTaskView()
+        .vSpacing(.bottom)
 }
