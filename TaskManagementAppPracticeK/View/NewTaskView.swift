@@ -49,7 +49,7 @@ struct NewTaskView: View {
                         .scaleEffect(0.9, anchor: .leading)
                 })
                 .padding(.top, 5)
-                /// Giving some space for tapping 
+                /// Giving some space for tapping
                 .padding(.trailing, -15)
                 
                 VStack(alignment: .leading, spacing: 8, content: {
@@ -64,7 +64,19 @@ struct NewTaskView: View {
                             Circle()
                                 .fill(color)
                                 .frame(width: 20, height: 20)
+                                /// Showing which color is currently selected
+                                .background(content: {
+                                    Circle()
+                                        .stroke(lineWidth: 2)
+                                        .opacity(taskColor == color ? 1 : 0)
+                                })
                                 .hSpacing(.center)
+                                .contentShape(.rect)
+                                .onTapGesture {
+                                    withAnimation(.snappy) {
+                                        taskColor = color
+                                    }
+                                }
                         }
                     }
                 })
