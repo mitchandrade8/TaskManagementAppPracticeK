@@ -48,6 +48,14 @@ struct TasksView: View {
         }
         .padding([.vertical, .leading], 15)
         .padding(.top, 15)
+        .overlay {
+            if tasks.isEmpty {
+                Text("No Task's Found")
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+                    .frame(width: 150)
+            }
+        }
     }
 }
 

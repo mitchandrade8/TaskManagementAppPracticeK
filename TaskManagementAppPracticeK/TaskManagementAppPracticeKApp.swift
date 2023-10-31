@@ -13,5 +13,6 @@ struct TaskManagementAppPracticeKApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Task.self)
     }
 }

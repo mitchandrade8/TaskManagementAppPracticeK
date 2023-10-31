@@ -11,6 +11,10 @@ struct NewTaskView: View {
     
     /// View Properties
     @Environment(\.dismiss) private var dismiss
+    
+    /// Model Context For Saving Data
+    @Environment(\.modelContext) private var context
+    
     @State private var taskTitle: String = ""
     @State private var taskDate: Date = .init()
     @State private var taskColor: Color = .taskColor1
