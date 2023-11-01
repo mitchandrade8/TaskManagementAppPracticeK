@@ -20,8 +20,9 @@ struct TaskRowView: View {
                 .background(.white.shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
                 .overlay {
                     Circle()
+                        .foregroundStyle(.clear)
+                        .contentShape(.circle)
                         .frame(width: 50, height: 50)
-                        .blendMode(.destinationOver)
                         .onTapGesture {
                             task.isCompleted.toggle()
                         }
