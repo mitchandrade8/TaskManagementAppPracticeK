@@ -11,6 +11,9 @@ struct TaskRowView: View {
     
     @Bindable var task: Task
     
+    /// Model Context
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
             Circle()
@@ -43,7 +46,16 @@ struct TaskRowView: View {
             .hSpacing(.leading)
             .background(task.tintColor, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
             .strikethrough(task.isCompleted, pattern: .solid, color: .black)
+            .contentShape(.contextMenuPreview, .rect(cornerRadius: 15))
+            .contextMenu {
+                Button("Delete Task", role: .destructive) {
+                    /// Deleting A Task
+                    context.delete(task)
+                    try? context.save()
+                }
+            }
             .offset(y: -8)
+            
         }
         
     }
